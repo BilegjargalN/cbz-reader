@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBZ Comic Reader</title>
+</head>
+<body class="theme-antique-paper">
+    <div id="app-container">
+        <div id="sidebar-left" class="sidebar">
+            <div class="sidebar-header">
+                <h2>Reader</h2>
+            </div>
+            <div class="sidebar-content">
+                <div class="sidebar-section">
+                    <label for="file-input" class="file-label"><i class="fas fa-folder-open"></i> Load .cbz File</label>
+                    <input type="file" id="file-input" accept=".cbz">
+                    <div id="comic-filename" class="filename-display">No file loaded</div>
+                </div>
+                <div id="reader-controls" class="sidebar-section hidden">
+                    <h3>Reading Mode</h3>
+                    <div class="mode-selector">
+                        <input type="radio" id="mode-comic" name="reading-mode" value="comic" checked>
+                        <label for="mode-comic"><i class="fas fa-book-open"></i> Comic</label>
+                        <input type="radio" id="mode-manga" name="reading-mode" value="manga">
+                        <label for="mode-manga"><i class="fas fa-book"></i> Manga</label>
+                        <input type="radio" id="mode-webtoon" name="reading-mode" value="webtoon">
+                        <label for="mode-webtoon"><i class="fas fa-arrows-alt-v"></i> Webtoon</label>
+                    </div>
+                    
+                    <div id="paged-controls">
+                        <h3>View Options</h3>
+                        <div class="view-options">
+                            <input type="checkbox" id="double-panel-toggle">
+                            <label for="double-panel-toggle"><i class="fas fa-columns"></i> Double Panel</label>
+                        </div>
+                        <div id="navigation">
+                            <button id="prev-button"><i class="fas fa-chevron-left"></i> Previous</button>
+                            <button id="next-button">Next <i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="page-jump-controls">
+                        <h3>Go to Page</h3>
+                        <div id="page-jump">
+                            <input type="number" id="page-input" min="1">
+                            <button id="page-go-button"><i class="fas fa-search-location"></i></button>
+                        </div>
+                        <span id="page-counter">Page 0 of 0</span>
+                    </div>
+
+                    <h3>Autoscroll</h3>
+                    <div class="autoscroll-controls">
+                        <input type="checkbox" id="autoscroll-toggle">
+                        <label for="autoscroll-toggle"><i class="fas fa-cog"></i> Autoscroll</label>
+                        <input type="number" id="autoscroll-interval" value="3" min="1" max="60" title="Scroll interval in seconds">
+                        <label for="autoscroll-interval" class="input-label">seconds</label>
+                    </div>
+                </div>
+                <div class="sidebar-section">
+                    <h3>Theme</h3>
+                    <select id="theme-selector">
+                        <option value="theme-ashen-gray">Ashen Gray</option>
+                        <option value="theme-nordic-light">Nordic Light</option>
+                        <option value="theme-antique-paper">Antique Paper</option>
+                        <option value="theme-solarized-dark">Solarized Dark</option>
+                        <option value="theme-cyberpunk-neon">Cyberpunk Neon</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="viewer-area">
+            <div id="viewer"></div>
+            <div id="welcome-message">
+                <p>Please load a .cbz file to start reading.</p>
+                <div id="last-read-prompt" class="hidden"></div>
+            </div>
+        </div>
+
+        <div id="sidebar-right" class="sidebar hidden">
+             <div class="sidebar-header">
+                <h2>Pages</h2>
+            </div>
+            <div id="thumbnail-container"></div>
+        </div>
+
+        <button id="sidebar-left-toggle" class="sidebar-toggle" data-sidebar="sidebar-left">⟨</button>
+        <button id="sidebar-right-toggle" class="sidebar-toggle hidden" data-sidebar="sidebar-right">⟩</button>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
