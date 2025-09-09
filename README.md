@@ -35,7 +35,7 @@ A modern, feature-rich comic book reader for `.cbz` files, built with HTML, CSS,
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/cbz-reader.git
+    git clone https://github.com/BilegjargalN/cbz-reader.git
     cd cbz-reader
     ```
 
